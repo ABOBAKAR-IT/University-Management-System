@@ -254,7 +254,16 @@ void University::noOfStudents()
     cout << "\n9.  Total Students";
     cout << "\nEnter Your Choice: ";
     cin >> choice;
-    u.semester(choice);
+    if(choice<9&&choice>0){
+    semester(choice);
+    }
+else if(choice==9){
+    totalStudents();
+}
+    else{
+        cout<<"Invalid Choice\n";
+    }
+
     /*switch(choice){
         case 1:
             u.semester1();
@@ -500,12 +509,12 @@ void University::semester8(){
 }*/
 void University::totalStudents()
 {
-    for (int a = 0; a < total; a++)
+   /* for (int a = 0; a < total; a++)
     {
         u.count++;
-    }
-    cout << "No Of Students: " << u.count << endl;
-    u.count = 0;
+    }*/
+    cout << "No Of Students: " << total<< endl;
+   // u.count = 0;
 }
 void University::CS(int smpt)
 {
