@@ -305,7 +305,7 @@ void University::CS(int smpt)
             total_stuent++;
         }
     }
-    cout << "No of Students of cs: " << total_stuent << endl;
+    cout << "No of Students of CS: " << total_stuent << endl;
     total_stuent = 0;
 }
 void University::SE(int smpt)
@@ -319,7 +319,7 @@ void University::SE(int smpt)
             total_stuent++;
         }
     }
-    cout << "No of Students of cs: " << total_stuent << endl;
+    cout << "No of Students of SE: " << total_stuent << endl;
     total_stuent = 0;
 }
 void University::IT(int smpt)
@@ -333,7 +333,7 @@ void University::IT(int smpt)
             total_stuent++;
         }
     }
-    cout << "No of Students of cs: " << total_stuent << endl;
+    cout << "No of Students of IT: " << total_stuent << endl;
     total_stuent = 0;
 }
 void University::totalSemester(int smpt)
@@ -358,31 +358,32 @@ void University::departmentStudents()//search number fo student in a department
     cout << "\nEnter Your Choice: ";
     cin >> choice;
     int total_stuent = 0;
+    string dpt;
     for (int a = 0; a < total; a++)
     {
         if (choice == 1)
-        {
+        {dpt="CS";
             if (s[a].department == "CS" || s[a].department == "cs" || s[a].department == "Cs" || s[a].department == "cS")
             {
                 total_stuent++;
             }
         }
         if (choice == 2)
-        {
+        {dpt="IT";
             if (s[a].department == "IT" || s[a].department == "it" || s[a].department == "It" || s[a].department == "iT")
             {
                 total_stuent++;
             }
         }
         if (choice == 3)
-        {
+        {dpt="SE";
             if (s[a].department == "SE" || s[a].department == "se" || s[a].department == "Se" || s[a].department == "sE")
             {
                 total_stuent++;
             }
         }
     }
-    cout << "No of Students: " << total_stuent << endl;
+    cout << "No of Students "<<dpt<< ": " << total_stuent << endl;
 }
 int main()
 {
