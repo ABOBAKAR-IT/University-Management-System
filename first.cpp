@@ -26,25 +26,13 @@ public:
     void del();
     void noOfStudents();
     void semester(int smpt);
-    /* void semester2();
-     void semester3();
-     void semester4();
-     void semester5();
-     void semester6();
-     void semester7();
-     void semester8();*/
-    void totalStudents();
+    void totalStudents();//Search number of students in University
     void CS(int smpt);
     void SE(int smpt);
     void IT(int smpt);
-    void totalFirst();
-    // void totalSecond();
-    // void totalThird();
-    // void totalFourth();
-    // void totalFifth();
-    // void totalSixth();
-    // void totalSeventh();
-    // void totalEigth();
+    void departmentStudents();//search total number fo student in a department
+    void totalSemester(int smpt);//earch total number of students in a semester
+
 } u;
 // Students Management System
 University::University() : count(0), total(0) {}
@@ -252,50 +240,25 @@ void University::noOfStudents()
     cout << "\n7.  7th Semester Students";
     cout << "\n8.  8th Semester Students";
     cout << "\n9.  Total Students";
+    cout << "\n10.  Total Students in a Department";
     cout << "\nEnter Your Choice: ";
     cin >> choice;
-    if(choice<9&&choice>0){
-    semester(choice);
+    if (choice < 9 && choice > 0)
+    {
+        semester(choice);
     }
-else if(choice==9){
-    totalStudents();
-}
-    else{
-        cout<<"Invalid Choice\n";
+    else if (choice == 9)
+    {
+        totalStudents();
     }
-
-    /*switch(choice){
-        case 1:
-            u.semester1();
-            break;
-        case 2:
-            u.semester2();
-            break;
-        case 3:
-            u.semester3();
-            break;
-        case 4:
-            u.semester4();
-            break;
-        case 5:
-            u.semester5();
-            break;
-        case 6:
-            u.semester6();
-            break;
-        case 7:
-            u.semester7();
-            break;
-        case 8:
-            u.semester8();
-            break;
-        case 9:
-            u.totalStudents();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }*/
+    else if (choice == 10)
+    {
+        departmentStudents();
+    }
+    else
+    {
+        cout << "Invalid Choice\n";
+    }
 }
 void University::semester(int smpt)
 {
@@ -303,7 +266,7 @@ void University::semester(int smpt)
     cout << "1.  CS";
     cout << "\n2.  IT";
     cout << "\n3.  SE";
-    cout << "\n4.  Total First Semester Students";
+    cout << "\n4.  Total " << smpt << " Semester Students";
     cout << "\nEnter Your Choice: ";
     cin >> choice;
     switch (choice)
@@ -318,203 +281,18 @@ void University::semester(int smpt)
         u.IT(smpt);
         break;
     case 4:
-        totalFirst();
+        totalSemester(smpt);
         break;
     default:
         cout << "\aInvalid Choice\n";
         break;
     }
 }
-/*void University::semester2(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Second Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalSecond();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}
-void University::semester3(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Third Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalThird();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}
-void University::semester4(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Fourth Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalFourth();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}
-void University::semester5(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Fifth Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalFifth();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}
-void University::semester6(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Sixth Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalSixth();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}
-void University::semester7(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Seventh Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalSeventh();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}
-void University::semester8(){
-    int choice;
-    cout << "1.  CS";
-    cout << "\n2.  IT";
-    cout << "\n3.  SE";
-    cout << "\n4.  Total Eigth Semester Students";
-    cout << "\nEnter Your Choice: ";
-    cin >> choice;
-    switch(choice){
-        case 1:
-            u.CS();
-            break;
-        case 2:
-            u.SE();
-            break;
-        case 3:
-            u.IT();
-            break;
-        case 4:
-            totalEigth();
-            break;
-        default:
-            cout << "\aInvalid Choice\n";
-            break;
-    }
-}*/
+
 void University::totalStudents()
 {
-   /* for (int a = 0; a < total; a++)
-    {
-        u.count++;
-    }*/
-    cout << "No Of Students: " << total<< endl;
-   // u.count = 0;
+
+    cout << "No Of Students: " << total << endl;
 }
 void University::CS(int smpt)
 {
@@ -526,255 +304,86 @@ void University::CS(int smpt)
         {
             total_stuent++;
         }
-        /* switch(smpt){
-             case 1:
-                 if((u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS")&&u.s[a].semester==smpt){
-                     total_stuent++;
-                 }
-                 break;
-             case 2:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     total_stuent++;
-                 }
-                 break;
-             case 3:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     u.count++;
-                 }
-                 break;
-             case 4:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     u.count++;
-                 }
-                 break;
-             case 5:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     u.count++;
-                 }
-                 break;
-             case 6:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     u.count++;
-                 }
-                 break;
-             case 7:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     u.count++;
-                 }
-                 break;
-             case 8:
-                 if(u.s[a].department == "CS" || u.s[a].department == "cs" || u.s[a].department == "Cs" || u.s[a].department == "cS"){
-                     u.count++;
-                 }
-                 break;
-             default:
-                 cout << "\nInvalid Choice";
-                 break;
-         }*/
     }
     cout << "No of Students of cs: " << total_stuent << endl;
     total_stuent = 0;
 }
 void University::SE(int smpt)
 {
+    int total_stuent = 0;
     for (int a = 0; a < total; a++)
     {
-        switch (u.s[a].semester)
+        cout << "semester : " << u.s[a].semester << endl;
+        if ((u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE") && u.s[a].semester == smpt)
         {
-        case 1:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 2:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 3:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 4:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 5:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 6:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 7:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        case 8:
-            if (u.s[a].department == "SE" || u.s[a].department == "se" || u.s[a].department == "Se" || u.s[a].department == "sE")
-            {
-                u.count++;
-            }
-            break;
-        default:
-            cout << "\nInvalid Choice";
-            break;
+            total_stuent++;
         }
     }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
+    cout << "No of Students of cs: " << total_stuent << endl;
+    total_stuent = 0;
 }
 void University::IT(int smpt)
 {
+    int total_stuent = 0;
     for (int a = 0; a < total; a++)
     {
-        switch (u.s[a].semester)
+        cout << "semester : " << u.s[a].semester << endl;
+        if ((u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT") && u.s[a].semester == smpt)
         {
-        case 1:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 2:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 3:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 4:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 5:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 6:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 7:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        case 8:
-            if (u.s[a].department == "IT" || u.s[a].department == "it" || u.s[a].department == "It" || u.s[a].department == "iT")
-            {
-                u.count++;
-            }
-            break;
-        default:
-            cout << "\nInvalid Choice";
-            break;
+            total_stuent++;
         }
     }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
+    cout << "No of Students of cs: " << total_stuent << endl;
+    total_stuent = 0;
 }
-void University::totalFirst()
+void University::totalSemester(int smpt)
 {
+    int total_stuent = 0;
     for (int a = 0; a < total; a++)
     {
-        if (s[a].semester == 1)
+        if (s[a].semester == smpt)
         {
-            u.count++;
+            total_stuent++;
         }
     }
-    cout << "No of Students: " << u.count << endl;
+    cout << "No of Students: " << total_stuent << endl;
     u.count = 0;
 }
-/*
-void University::totalSecond(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 2){
-            u.count++;
+void University::departmentStudents()//search number fo student in a department
+{
+    int choice;
+    cout << "1.  CS";
+    cout << "\n2.  IT";
+    cout << "\n3.  SE";
+    cout << "\nEnter Your Choice: ";
+    cin >> choice;
+    int total_stuent = 0;
+    for (int a = 0; a < total; a++)
+    {
+        if (choice == 1)
+        {
+            if (s[a].department == "CS" || s[a].department == "cs" || s[a].department == "Cs" || s[a].department == "cS")
+            {
+                total_stuent++;
+            }
+        }
+        if (choice == 2)
+        {
+            if (s[a].department == "IT" || s[a].department == "it" || s[a].department == "It" || s[a].department == "iT")
+            {
+                total_stuent++;
+            }
+        }
+        if (choice == 3)
+        {
+            if (s[a].department == "SE" || s[a].department == "se" || s[a].department == "Se" || s[a].department == "sE")
+            {
+                total_stuent++;
+            }
         }
     }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
+    cout << "No of Students: " << total_stuent << endl;
 }
-void University::totalThird(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 3){
-            u.count++;
-        }
-    }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
-}
-void University::totalFourth(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 4){
-            u.count++;
-        }
-    }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
-}
-void University::totalFifth(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 5){
-            u.count++;
-        }
-    }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
-}
-void University::totalSixth(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 6){
-            u.count++;
-        }
-    }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
-}
-void University::totalSeventh(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 7){
-            u.count++;
-        }
-    }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
-}
-void University::totalEigth(){
-    for(int a = 0; a < total; a++){
-        if(s[a].semester == 8){
-            u.count++;
-        }
-    }
-    cout << "No of Students: " << u.count << endl;
-    u.count = 0;
-}*/
 int main()
 {
     u.menu();
